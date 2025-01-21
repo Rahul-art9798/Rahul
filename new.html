@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image Touch Interaction</title>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+img {
+  width: 200px;
+  height: auto;
+  margin: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div id="imageContainer">
+  <img src="image1.jpg" alt="Image 1" onclick="showImageCode(this)">
+  <img src="image2.jpg" alt="Image 2" onclick="showImageCode(this)">
+  <img src="image3.jpg" alt="Image 3" onclick="showImageCode(this)">
+</div>
+
+<div id="imageCode" style="display: none; margin-top: 20px;">
+  <h2>Image Code:</h2>
+  <pre id="codeOutput"></pre>
+</div>
+
+<script>
+function showImageCode(img) {
+  var codeOutput = document.getElementById("codeOutput");
+  var imageCode = <img src="${img.src}" alt="${img.alt}">;
+  codeOutput.textContent = imageCode;
+  document.getElementById("imageCode").style.display = "block";
+}
+</script>
+
+</body>
+</html>
